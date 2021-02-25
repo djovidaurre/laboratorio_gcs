@@ -16,7 +16,7 @@ steps:
     # ejecutar las instalaciones
     echo Compilar y correr las pruebas unitarias test
     echo comienza instalacion
-    sudo install java-1.8.0-openjdk-devel
+    install java-1.8.0-openjdk-devel
   displayName: 'Commit Check'
 - script: |
     echo Correr las pruebas de integración test 234
