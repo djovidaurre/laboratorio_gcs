@@ -2,7 +2,7 @@
 
 # Ejemplo GCS
 
-Esta aplicación web está basada en la aplicación play-scala-slick-example. Prueba 2
+Esta aplicación web está basada en la aplicación play-scala-slick-example.
  
 
 # Compilación
