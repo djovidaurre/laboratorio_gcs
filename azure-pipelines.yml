@@ -16,19 +16,7 @@ steps:
     # ejecutar las instalaciones
     echo Compilar y correr las pruebas unitarias test
     echo comienza instalacion
-    sudo yum -y update
-    sudo yum -y install java-1.8.0-openjdk-devel
-    curl https://downloads.lightbend.com/scala/2.12.10/scala-2.12.10.rpm --output scala-2.12.10.rpm
-    sudo yum -y install scala-2.12.10.rpm
-    curl https://bintray.com/sbt/rpm/rpm | tee /etc/yum.repos.d/bintray-sbt-rpm.repo
-    sudo yum -y install sbt
-    sudo yum install -y git
-    sudo yum install -y which
-    sudo yum install -y yum-utils
-    sudo yum -y install rpm-build
-    sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
-    sudo yum install -y docker-ce docker-ce-cli containerd.io
-    echo comienza instalacion
+    sudo install java-1.8.0-openjdk-devel
   displayName: 'Commit Check'
 - script: |
     echo Correr las pruebas de integración test 234
