@@ -13,6 +13,7 @@ container: centos:7
 
 steps:
 - script: |
+    # ejecutar las instalaciones
     echo Compilar y correr las pruebas unitarias test
     echo comienza instalacion
     yum -y update
@@ -28,11 +29,7 @@ steps:
     yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
     yum install -y docker-ce docker-ce-cli containerd.io
     echo comienza instalacion
-routetraffic:
- steps:
-- script: echo finalizacion
   displayName: 'Commit Check'
-
 - script: |
     echo Correr las pruebas de integración test 234
   displayName: 'Integration Tests'
