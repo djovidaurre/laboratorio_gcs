@@ -9,7 +9,7 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-container: centos:lasted
+container: centos:8
 
 steps:
 - script: |
