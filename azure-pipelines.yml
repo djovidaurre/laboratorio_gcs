@@ -16,12 +16,12 @@ steps:
 
 - script: |
     echo Instalar Actualizaciones
-    sudo -y update
+    sudo update
     echo Instalar Java JDK
-    sudo -y install java-1.8.0-openjdk-devel
+    sudo install java-1.8.0-openjdk-devel
     echo Descargar Scala
     curl https://downloads.lightbend.com/scala/2.12.10/scala-2.12.10.rpm --output scala-2.12.10.rpm
     echo Instalar Scala
-    sudo -y install scala-2.12.10.rpm
+    sudo install scala-2.12.10.rpm
     echo Finalizacion
   displayName: 'Integration Tests'
