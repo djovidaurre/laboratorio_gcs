@@ -8,13 +8,16 @@ trigger:
 
 pool:
   vmImage: ubuntu-latest
+
+container: centos:7
+
 steps:
- - template: ci/build-all-steps.yml
-    parameters:
-      os: Linux
 - script: echo Compilar y correr las pruebas unitarias
+            
   displayName: 'Commit Check'
 
 - script: |
     echo Correr las pruebas de integración
+    curl https://bintray.com/sbt/rpm/rpm | tee /etc/yum.repos.d/bintray-sbt-rpm.repo
+    yum -y install sbt
   displayName: 'Integration Tests'
