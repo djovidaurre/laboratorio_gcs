@@ -14,8 +14,7 @@ container: centos:8
 steps:
 - script: 
     echo Compilar y correr las pruebas unitarias test
-     export IPADDR=$(ip addr | grep 'state UP' -A2 | tail -n1 | awk '{print $2}' | cut -f1  -d'/')
-    echo "##vso[task.setvariable variable=IP_ADDR]$IPADDR"
+    echo The IP address is $(IP_ADDR)
   displayName: 'Commit Check'
 - script: 
     echo Correr las pruebas de integración test 234
