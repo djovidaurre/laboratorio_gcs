@@ -6,8 +6,6 @@
 trigger:
 - master
 
-- job: build_linux
-  displayName: 'Commit Check'
 pool:
   vmImage: ubuntu-latest
 steps:
@@ -15,7 +13,8 @@ steps:
     parameters:
       os: Linux
 - script: echo Compilar y correr las pruebas unitarias
-  
+  displayName: 'Commit Check'
+
 - script: |
     echo Correr las pruebas de integración
   displayName: 'Integration Tests'
