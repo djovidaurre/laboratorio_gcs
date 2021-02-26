@@ -12,10 +12,10 @@ pool:
 container: centos:8
 
 steps:
-- script: echo Compilar y correr las pruebas unitarias
+- script: echo Compilar y correr las pruebas unitarias 2
   - task: BatchScript@1
   inputs:
-    filename: ~/test.bat
+    filename: test.bat
   displayName: 'Commit Check'
 
 
