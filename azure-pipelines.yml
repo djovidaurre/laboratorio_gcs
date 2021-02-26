@@ -9,17 +9,12 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-container: centos:8
+container: centos:7
 
 steps:
-- script: echo Compilar y correr las pruebas unitarias 2
-  - task: BatchScript@1
-  inputs:
-    filename: test.bat
+- script: echo Compilar y correr las pruebas unitarias
   displayName: 'Commit Check'
-
 
 - script: |
     echo Correr las pruebas de integración
   displayName: 'Integration Tests'
-
