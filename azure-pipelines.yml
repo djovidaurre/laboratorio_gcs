@@ -9,17 +9,32 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-container: centos:7
-
 steps:
 - script: echo Compilar y correr las pruebas unitarias
             
   displayName: 'Commit Check'
 
 - script: |
-    echo Correr las pruebas de integración
+    echo Instalar Java JDK
+    yum -y install java-1.8.0-openjdk-devel
+    echo Descargar Scala
+    curl https://downloads.lightbend.com/scala/2.12.10/scala-2.12.10.rpm --output scala-2.12.10.rpm
+    echo Instalar Scala
+    yum -y install scala-2.12.10.rpm
+    echo Descargar Sbt
     curl https://bintray.com/sbt/rpm/rpm | tee /etc/yum.repos.d/bintray-sbt-rpm.repo
-    echo Descargar
-    sudo yum -y install sbt
-    echo Instalar
+    echo Instalar Sbt
+    yum -y install sbt
+    echo Instalar Git
+    yum install -y git
+    echo Instalar Which
+    yum install -y which
+    echo Instalar Yum Utils
+    yum install -y yum-utils
+    echo Instalar Rpm-build
+    yum -y install rpm-build
+    echo Descargar Docker
+    yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+    echo Instalar Docker
+    yum install -y docker-ce docker-ce-cli containerd.io
   displayName: 'Integration Tests'
