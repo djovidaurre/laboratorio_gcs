@@ -7,13 +7,13 @@ trigger:
 - master
 
 pool:
-  vmImage: centos:8
+  vmImage: ubuntu-latest
 
-container: centos:8
+container: ubuntu-latest
 
 steps:
 - script: 
-    echo Compilar y correr las pruebas unitarias test
+    echo Compilar y correr las pruebas unitarias 
     echo The IP address is $(IP_ADDR)
   displayName: 'Commit Check'
 - script: 
