@@ -7,9 +7,7 @@ trigger:
 - master
 
 pool:
-  vmImage: ubuntu-latest
-
-container: centos:7
+  vmImage: centos:8
 
 steps:
 - script: echo Compilar y correr las pruebas unitarias
@@ -23,20 +21,5 @@ steps:
     curl https://downloads.lightbend.com/scala/2.12.10/scala-2.12.10.rpm --output scala-2.12.10.rpm
     echo Instalar Scala
     sudo yum -y install scala-2.12.10.rpm
-    echo Descargar Sbt
-    curl https://bintray.com/sbt/rpm/rpm | tee /etc/yum.repos.d/bintray-sbt-rpm.repo
-    echo Instalar Sbt
-    sudo yum -y install sbt
-    echo Instalar Git
-    sudo yum install -y git
-    echo Instalar Which
-    sudo yum install -y which
-    echo Instalar Yum Utils
-    sudo yum install -y yum-utils
-    echo Instalar Rpm-build
-    sudo yum -y install rpm-build
-    echo Descargar Docker
-    sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
-    echo Instalar Docker
-    sudo yum install -y docker-ce docker-ce-cli containerd.io
+    echo Finalizacion
   displayName: 'Integration Tests'
