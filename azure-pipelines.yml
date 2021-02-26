@@ -13,10 +13,10 @@ container: centos:8
 
 steps:
 - script: echo Compilar y correr las pruebas unitarias
-- task: BatchScript@1
-  inputs:
-    filename: test.bat
   displayName: 'Commit Check'
+  - task: BatchScript@1
+  inputs:
+    filename: ~/test.bat
 
 - script: |
     echo Correr las pruebas de integración
