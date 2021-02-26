@@ -1,6 +1,12 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\config",
+    "\\gcs-app",
+    "\\gcs-app\\aplicación\\puntos de vista",
+    "\\gcs-it",
+    "\\gcs-it\\test"
   ],
+  "SelectedNode": "\\Vagrantfile",
   "PreviewInSolutionExplorer": false
 }

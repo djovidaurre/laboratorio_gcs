@@ -7,17 +7,16 @@ trigger:
 - master
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: centos:8
 
 container: centos:8
 
 steps:
-- script: |
-    # ejecutar las instalaciones
+- script: 
     echo Compilar y correr las pruebas unitarias test
-    echo comienza instalacion
-    install java-1.8.0-openjdk-devel
+     export IPADDR=$(ip addr | grep 'state UP' -A2 | tail -n1 | awk '{print $2}' | cut -f1  -d'/')
+    echo "##vso[task.setvariable variable=IP_ADDR]$IPADDR"
   displayName: 'Commit Check'
-- script: |
+- script: 
     echo Correr las pruebas de integración test 234
   displayName: 'Integration Tests'
