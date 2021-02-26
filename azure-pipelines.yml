@@ -19,5 +19,5 @@ steps:
 - script: |
     echo Correr las pruebas de integración
     curl https://bintray.com/sbt/rpm/rpm | tee /etc/yum.repos.d/bintray-sbt-rpm.repo
-    yum -y install sbt
+    sudo yum -y install sbt
   displayName: 'Integration Tests'
