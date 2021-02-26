@@ -7,12 +7,12 @@ trigger:
 - master
 
 pool:
-  vmImage: centos:8
+  vmImage: ubuntu-latest
 
 container: centos:8
 
 steps:
-- script: echo Compilar y correr las pruebas unitarias 222
+- script: echo Compilar y correr las pruebas unitarias
   displayName: 'Commit Check'
 
 - script: |
