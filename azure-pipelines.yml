@@ -7,7 +7,7 @@ trigger:
 - master
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: 'CentOS-latest'
 
 steps:
 - script: echo Compilar y correr las pruebas unitarias
@@ -16,9 +16,9 @@ steps:
 
 - script: |
     echo Instalar Actualizaciones
-    sudo update
+    sudo yum -y update
     echo Instalar Java JDK
-    sudo install java-1.8.0-openjdk-devel
+    sudo yum -y install java-1.8.0-openjdk-devel
     echo Descargar Scala
     curl https://downloads.lightbend.com/scala/2.12.10/scala-2.12.10.rpm --output scala-2.12.10.rpm
     echo Instalar Scala
