@@ -7,21 +7,17 @@ trigger:
 - master
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: ubuntu-latest
+
+container: centos:7
 
 steps:
 - script: echo Compilar y correr las pruebas unitarias
-            
   displayName: 'Commit Check'
 
 - script: |
-    echo Instalar Actualizaciones
-    sudo apt-get  update
-    echo Instalar Java JDK
-    sudo apt-get install java-1.8.0-openjdk-devel
-    echo Descargar Scala
-    curl https://downloads.lightbend.com/scala/2.12.10/scala-2.12.10.rpm --output scala-2.12.10.rpm
-    echo Instalar Scala
-    sudo apt-get install scala-2.12.10.rpm
-    echo Finalizacion
+    echo Correr las pruebas de integración
+    echo Inicio
+    sudo yum -y update
+    echo Fin
   displayName: 'Integration Tests'
