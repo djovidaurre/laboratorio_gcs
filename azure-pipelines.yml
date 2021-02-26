@@ -9,13 +9,12 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-container: ubuntu-latest
+container: centos:7
 
 steps:
-- script: 
-    echo Compilar y correr las pruebas unitarias 
-    echo The IP address is $(IP_ADDR)
+- script: echo Compilar y correr las pruebas unitarias
   displayName: 'Commit Check'
-- script: 
-    echo Correr las pruebas de integración test 234
+
+- script: |
+    echo Correr las pruebas de integración
   displayName: 'Integration Tests'
