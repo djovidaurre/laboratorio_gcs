@@ -14,7 +14,7 @@ steps:
   displayName: 'Commit Check'
 
 - script: |
-    echo Correr las pruebas de integración 2
+    echo Correr las pruebas de integración
      echo Inicio update MENSAJEEEEEEEEEEEEEEEEEEEE
     sudo apt-get update
     echo Inicio java  MENSAJEEEEEEEEEEEEEEEEEEEE
