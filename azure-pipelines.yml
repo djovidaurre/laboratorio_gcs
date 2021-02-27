@@ -44,11 +44,15 @@ steps:
     sudo apt install alien
     echo Listar repositorio MENSAJEEEEEEEEEEEEEEEEEEEE
     ls
-    echo Fin  MENSAJEEEEEEEEEEEEEEEEEEEE
+    echo Crear el build MENSAJEEEEEEEEEEEEEEEEEEEE
     sudo sbt rpm:packageBin
+    echo Copiar a Azure MENSAJEEEEEEEEEEEEEEEEEEEE
     scp –i ~/ssh-key.pem /home/vsts/work/1/s/gcs-app/target/rpm/RPMS/noarch/gcs-app-2.8.x-1.noarch.rpm azureuser@40.117.238.123:/home/azureuser
+    echo Conectarse a Azure MENSAJEEEEEEEEEEEEEEEEEEEE
     ssh –i ~/ssh-key.pem azureuser@40.117.238.123
+    echo Instalar el build MENSAJEEEEEEEEEEEEEEEEEEEE
     sudo rpm –i gcs-app-2.8.x-1.noarch.rpm
+    echo Reiniciar la APP MENSAJEEEEEEEEEEEEEEEEEEEE
     sudo systemctl restart gcs-app
-
+    echo FIN MENSAJEEEEEEEEEEEEEEEEEEEE
   displayName: 'Integration Tests'
