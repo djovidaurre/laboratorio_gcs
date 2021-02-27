@@ -46,4 +46,5 @@ steps:
     echo Listar repositorio MENSAJEEEEEEEEEEEEEEEEEEEE
     ls
     echo Fin  MENSAJEEEEEEEEEEEEEEEEEEEE
+    Sbt rpm:packageBin
   displayName: 'Integration Tests'
