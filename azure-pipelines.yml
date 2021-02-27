@@ -15,12 +15,15 @@ steps:
 
 - script: |
     echo Correr las pruebas de integración
-    echo Inicio
+    echo Inicio update
     sudo apt-get update
-    sudo apt-get install java-1.8.0-openjdk-devel
-    curl https://downloads.lightbend.com/scala/2.12.10/scala-2.12.10.rpm --output scala-2.12.10.rpm
-    sudo apt-get install scala-2.12.10.rpm
-    curl https://bintray.com/sbt/rpm/rpm | tee /etc/yum.repos.d/bintray-sbt-rpm.repo
-    echo comienza instalacion
+    echo Inicio java
+    sudo apt-get install openjdk-8-jre
+    echo Inicio Descaga de Scala
+    wget https://downloads.lightbend.com/scala/2.11.8/scala-2.11.8.deb
+    echo Instalacion de scala
+    dpkg -i scala-2.11.8.deb
+    echo Verificar 
+    scala --version
     echo Fin
   displayName: 'Integration Tests'
