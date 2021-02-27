@@ -47,9 +47,9 @@ steps:
     echo Crear el build MENSAJEEEEEEEEEEEEEEEEEEEE
     sudo sbt rpm:packageBin
     echo Copiar a Azure MENSAJEEEEEEEEEEEEEEEEEEEE
-    sudo scp -v -o StrictHostKeyChecking=no -i /home/vsts/work/1/s/ssh-key.pem /home/vsts/work/1/s/gcs-app/target/rpm/RPMS/noarch/gcs-app-2.8.x-1.noarch.rpm azureuser@40.117.238.123:/home/azureuser
+    sudo scp -v -o StrictHostKeyChecking=no -i ssh-key.pem /home/vsts/work/1/s/gcs-app/target/rpm/RPMS/noarch/gcs-app-2.8.x-1.noarch.rpm azureuser@40.117.238.123:/home/azureuser
     echo Conectarse a Azure MENSAJEEEEEEEEEEEEEEEEEEEE
-    sudo ssh -tt -i /home/vsts/work/1/s/ssh-key.pem azureuser@40.117.238.123 <<'EOT'
+    sudo ssh -tt -i ssh-key.pem azureuser@40.117.238.123 <<'EOT'
     echo Desintalar la APP MENSAJEEEEEEEEEEEEEEEEEEEE
     sudo rpm -e gcs-app
     echo Instalar la APP MENSAJEEEEEEEEEEEEEEEEEEEE
