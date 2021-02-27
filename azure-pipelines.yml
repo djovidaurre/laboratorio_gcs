@@ -7,7 +7,7 @@ trigger:
 - master
 
 pool:
-  vmImage: centos:8
+  vmImage: ubuntu-latest
 
 steps:
 - script: echo Compilar y correr las pruebas unitarias
@@ -16,6 +16,6 @@ steps:
 - script: |
     echo Correr las pruebas de integración
     echo Inicio
-    sudo yum -y update
+    sudo apt-get upgrade
     echo Fin
   displayName: 'Integration Tests'
