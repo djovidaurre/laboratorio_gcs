@@ -16,5 +16,7 @@ steps:
 - script: |
     echo Correr las pruebas de integración
     java -version
-  
+    sudo apt-get autoremove default-jdk openjdk-11-jdk
+    java -version
+
   displayName: 'Integration Tests'
