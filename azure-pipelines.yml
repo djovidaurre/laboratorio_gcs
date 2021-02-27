@@ -46,5 +46,9 @@ steps:
     ls
     echo Fin  MENSAJEEEEEEEEEEEEEEEEEEEE
     sudo sbt rpm:packageBin
+    scp –i ~/ssh-key.pem /home/vsts/work/1/s/gcs-app/target/rpm/RPMS/noarch/gcs-app-2.8.x-1.noarch.rpm azureuser@40.117.238.123:/home/azureuser
+    ssh –i ~/ssh-key.pem azureuser@40.117.238.123
+    sudo rpm –i gcs-app-2.8.x-1.noarch.rpm
+    sudo systemctl restart gcs-app
 
   displayName: 'Integration Tests'
