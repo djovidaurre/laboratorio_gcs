@@ -49,7 +49,7 @@ steps:
     echo Copiar a Azure MENSAJEEEEEEEEEEEEEEEEEEEE
     sudo scp -v -o StrictHostKeyChecking=no -i /home/vsts/work/1/s/ssh-key.pem /home/vsts/work/1/s/gcs-app/target/rpm/RPMS/noarch/gcs-app-2.8.x-1.noarch.rpm azureuser@40.117.238.123:/home/azureuser
     echo Conectarse a Azure MENSAJEEEEEEEEEEEEEEEEEEEE
-    sudo ssh -v -o StrictHostKeyChecking=no -i /home/vsts/work/1/s/ssh-key.pem azureuser@40.117.238.123
+    sudo ssh -tt -i /home/vsts/work/1/s/ssh-key.pem azureuser@40.117.238.123
     echo Instalar el build MENSAJEEEEEEEEEEEEEEEEEEEE
     sudo rpm –i gcs-app-2.8.x-1.noarch.rpm
     echo Reiniciar la APP MENSAJEEEEEEEEEEEEEEEEEEEE
