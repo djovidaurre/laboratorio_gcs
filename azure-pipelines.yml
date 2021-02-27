@@ -18,7 +18,8 @@ steps:
     echo Inicio update MENSAJEEEEEEEEEEEEEEEEEEEE
     sudo apt-get update
     echo Inicio java  MENSAJEEEEEEEEEEEEEEEEEEEE
-    sudo apt-get install default-jdk -y
+    sudo apt-get install openjdk-8-jdk
+    java -version
     echo Instalacion y Descarga de scala  MENSAJEEEEEEEEEEEEEEEEEEEE 
     wget www.scala-lang.org/files/archive/scala-2.12.10.deb
     sudo dpkg -i scala*.deb
