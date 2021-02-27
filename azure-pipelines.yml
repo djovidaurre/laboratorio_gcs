@@ -54,6 +54,7 @@ steps:
     sudo rpm –i gcs-app-2.8.x-1.noarch.rpm
     echo Reiniciar la APP MENSAJEEEEEEEEEEEEEEEEEEEE
     sudo systemctl restart gcs-app
+    logout
     EOT
     echo FIN MENSAJEEEEEEEEEEEEEEEEEEEE222
   displayName: 'Integration Tests'
