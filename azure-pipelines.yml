@@ -17,7 +17,6 @@ steps:
     echo Correr las pruebas de integración
     echo Inicio update MENSAJEEEEEEEEEEEEEEEEEEEE
     sudo apt-get update
-    sudo apt-get upgrade -y
     echo Inicio java  MENSAJEEEEEEEEEEEEEEEEEEEE
     sudo apt-get install default-jdk -y
     echo Instalacion y Descarga de scala  MENSAJEEEEEEEEEEEEEEEEEEEE 
