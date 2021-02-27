@@ -48,6 +48,14 @@ steps:
     sudo sbt rpm:packageBin
     echo Ver archivos de este repositorio MENSAJEEEEEEEEEEEEEEEEEEEE
     ls /home/vsts/work/1/s/
+    echo Ver archivos de este repositorio MENSAJEEEEEEEEEEEEEEEEEEEE
+    ls /home/vsts/work/1/
+    echo Ver archivos de este repositorio MENSAJEEEEEEEEEEEEEEEEEEEE
+    ls /home/vsts/work/
+    echo Ver archivos de este repositorio MENSAJEEEEEEEEEEEEEEEEEEEE
+    ls /home/vsts/
+    echo Ver archivos de este repositorio MENSAJEEEEEEEEEEEEEEEEEEEE
+    ls /home/
     echo Copiar a Azure MENSAJEEEEEEEEEEEEEEEEEEEE
     scp -i /home/vsts/work/1/s/ssh-key.pem /home/vsts/work/1/s/gcs-app/target/rpm/RPMS/noarch/gcs-app-2.8.x-1.noarch.rpm azureuser@40.117.238.123:/home/azureuser
     echo Conectarse a Azure MENSAJEEEEEEEEEEEEEEEEEEEE
