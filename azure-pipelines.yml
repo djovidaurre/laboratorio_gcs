@@ -15,17 +15,19 @@ steps:
 
 - script: |
     echo Correr las pruebas de integración
-    echo Inicio update #######################################################################
+    echo Inicio update *******************************************************************
     sudo apt-get update
-    echo Inicio java  #######################################################################
+    echo Inicio java  *******************************************************************
     sudo apt-get install openjdk-8-jre
-    echo Inicio Descaga de Scala  #######################################################################
+    echo Inicio Descaga de Scala  *******************************************************************
     wget https://downloads.lightbend.com/scala/2.11.8/scala-2.11.8.deb
-    echo Instalacion de scala  #######################################################################
+    echo Instalacion de scala  *******************************************************************
     sudo dpkg -i scala-2.11.8.deb
-    echo Verificar  #######################################################################
-    scala --version
-    echo Instalar SBT #######################################################################
-    sudo dpkg -i https://dl.bintray.com/sbt/debian/sbt-1.0.0.deb
-    echo Fin  #######################################################################
+    echo Verificar  *******************************************************************
+    scala -version
+    echo Descarga SBT *******************************************************************
+    wget https://dl.bintray.com/sbt/debian/sbt-1.0.0.deb
+    echo Instalar SBT *******************************************************************
+    sudo dpkg -i sbt-1.0.0.deb
+    echo Fin  *******************************************************************
   displayName: 'Integration Tests'
