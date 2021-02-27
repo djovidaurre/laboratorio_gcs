@@ -54,7 +54,7 @@ steps:
     sudo rpm -e gcs-app
     echo Instalar la APP MENSAJEEEEEEEEEEEEEEEEEEEE
     sudo rpm –i gcs-app-2.8.x-1.noarch.rpm
-    echo Reiniciar la APP MENSAJEEEEEEEEEEEEEEEEEEEE
+    echo Reiniciar la APP MENSAJEEEEEEEEEEEEEEEEEEEE 2222
     sudo systemctl restart gcs-app
     logout
     EOT
