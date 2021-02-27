@@ -19,15 +19,31 @@ steps:
     sudo apt-get update
     echo Inicio java  MENSAJEEEEEEEEEEEEEEEEEEEE
     sudo apt-get install openjdk-8-jre
+    java -version
     echo Inicio Descaga de Scala   MENSAJEEEEEEEEEEEEEEEEEEEE
     wget https://downloads.lightbend.com/scala/2.11.8/scala-2.11.8.deb
     echo Instalacion de scala  MENSAJEEEEEEEEEEEEEEEEEEEE 
     sudo dpkg -i scala-2.11.8.deb
-    echo Verificar  MENSAJEEEEEEEEEEEEEEEEEEEE
     scala -version
     echo Descarga SBT MENSAJEEEEEEEEEEEEEEEEEEEE
     wget https://dl.bintray.com/sbt/debian/sbt-1.0.0.deb
     echo Instalar SBT MENSAJEEEEEEEEEEEEEEEEEEEE
     sudo dpkg -i sbt-1.0.0.deb
+    sbt -version
+    echo Instalar GIT MENSAJEEEEEEEEEEEEEEEEEEEE
+    sudo apt install git
+    git -version
+    echo Instalar Which MENSAJEEEEEEEEEEEEEEEEEEEE
+    sudo apt install which
+    echo Instalar YUM-UTILS MENSAJEEEEEEEEEEEEEEEEEEEE
+    sudo apt-get install -y yum-utils
+    echo Instalar Docker MENSAJEEEEEEEEEEEEEEEEEEEE
+    sudo apt-get install docker-ce docker-ce-cli containerd.io
+    sudo docker run hello-world
+    echo Instalar ALIEN MENSAJEEEEEEEEEEEEEEEEEEEE
+    sudo add-apt-repository universe
+    sudo apt install alien
+    echo Listar repositorio MENSAJEEEEEEEEEEEEEEEEEEEE
+    ls
     echo Fin  MENSAJEEEEEEEEEEEEEEEEEEEE
   displayName: 'Integration Tests'
