@@ -47,9 +47,9 @@ steps:
     echo Crear el build MENSAJEEEEEEEEEEEEEEEEEEEE
     sudo sbt rpm:packageBin
     echo Copiar a Azure MENSAJEEEEEEEEEEEEEEEEEEEE
-    sudo scp -v -o StrictHostKeyChecking=no -i ssh-key.pem /home/vsts/work/1/s/gcs-app/target/rpm/RPMS/noarch/gcs-app-2.8.x-1.noarch.rpm azureuser@40.117.238.123:/home/azureuser
+    sudo scp -v -o StrictHostKeyChecking=no -i ssh-key.pem /home/vsts/work/1/s/gcs-app/target/rpm/RPMS/noarch/gcs-app-2.8.x-1.noarch.rpm azureuser@23.96.48.228:/home/azureuser
     echo Conectarse a Azure MENSAJEEEEEEEEEEEEEEEEEEEE
-    sudo ssh -tt -i ssh-key.pem azureuser@40.117.238.123 <<'EOT'
+    sudo ssh -tt -i ssh-key.pem azureuser@23.96.48.228 <<'EOT'
     echo Detener el APP MENSAJEEEEEEEEEEEEEEEEEEEE
     sudo systemctl stop gcs-app
     echo Desintalar la APP MENSAJEEEEEEEEEEEEEEEEEEEE
@@ -66,9 +66,9 @@ steps:
     logout
     EOT
     echo Copiar a Azure archivo ngnix MENSAJEEEEEEEEEEEEEEEEEEEE
-    sudo scp -v -o StrictHostKeyChecking=no -i ssh-key.pem nginx.conf azureuser@40.117.238.123:/etc/nginx
+    sudo scp -v -o StrictHostKeyChecking=no -i ssh-key.pem nginx.conf azureuser@23.96.48.228:/etc/nginx
     echo Volver a conectarse a Azure MENSAJEEEEEEEEEEEEEEEEEEEE
-    sudo ssh -tt -i ssh-key.pem azureuser@40.117.238.123 <<'EOT'
+    sudo ssh -tt -i ssh-key.pem azureuser@23.96.48.228 <<'EOT'
     echo Reiniciar el nginx MENSAJEEEEEEEEEEEEEEEEEEEE
     sudo systemctl restart nginx
     echo Reiniciar el app MENSAJEEEEEEEEEEEEEEEEEEEE
