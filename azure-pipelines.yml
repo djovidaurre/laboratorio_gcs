@@ -8,14 +8,25 @@ trigger:
 
 pool:
   vmImage: 'Ubuntu-16.04'
-steps:
-- script: |
+
+stages:
+- stage: Fase de verificacion de contribucion - Commit Check Phase
+ jobs:
+ - job: Fase de verificacion de contribucion - Commit Check Phase
+ steps:  
+ - script: |
  echo Compilar y ejecutar test unitarios
  displayName: 'Fase de verificacion de contribucion - Commit Check Phase'
+- stage: Fase de verificacion de pruebas de integracion - Integration Test Prase
+ jobs: 
+ - job: Fase de verificacion de pruebas de integracion - Integration Test Prase
 steps:
-- script: |
+ - script: |
   echo Compilar y ejecutar test de integracion con una base de datos postgres 
   displayName: 'Fase de verificacion de pruebas de integracion - Integration Test Prase'
+- stage: 'Fase de despliegue a servidores de pruebas - Deploy Phase'
+ jobs:
+ - job: 'Fase de despliegue a servidores de pruebas - Deploy Phase'
 steps:
 - script: |
     echo 1.-  Empaquetar software
