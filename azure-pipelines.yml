@@ -13,7 +13,7 @@ steps:
 - script: echo Compilar y correr las pruebas unitarias
   displayName: 'Commit Check'
 
- - script: |
+- script: |
     echo Correr las pruebas de integración
     echo Inicio update MENSAJEEEEEEEEEEEEEEEEEEEE
- displayName: 'Integration Tests'
+displayName: 'Integration Tests'
