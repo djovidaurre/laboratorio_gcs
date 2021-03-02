@@ -55,7 +55,7 @@ steps:
     echo Desintalar la APP MENSAJEEEEEEEEEEEEEEEEEEEE
     sudo rpm -e gcs-app
     echo Instalar la APP MENSAJEEEEEEEEEEEEEEEEEEEE
-    sudo rpm –i gcs-app-2.8.x-1.noarch.rpm
+    sudo rpm -i gcs-app-2.8.x-1.noarch.rpm
     echo Restablecer la APP MENSAJEEEEEEEEEEEEEEEEEEEE
     sudo systemctl restart gcs-app  
     echo Cambiar de usuario MENSAJEEEEEEEEEEEEEEEEEEEE
