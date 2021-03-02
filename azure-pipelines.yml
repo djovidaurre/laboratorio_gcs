@@ -8,13 +8,12 @@ trigger:
 
 pool:
   vmImage: 'Ubuntu-16.04'
-
 steps:
 - script: |
-  echo Compilar y ejecutar test unitarios
-  # PREGUNTAR#################
-  # sbt test  
-  displayName: 'Fase de verificacion de contribucion - Commit Check Phase'
+ echo Compilar y ejecutar test unitarios
+ /* PREGUNTAR#################
+ #sbt test  */
+ displayName: 'Fase de verificacion de contribucion - Commit Check Phase'
 
 steps:
 - script: |
