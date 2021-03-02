@@ -10,53 +10,59 @@ pool:
   vmImage: 'Ubuntu-16.04'
 
 steps:
-- script: echo Compilar y correr las pruebas unitarias
-  displayName: 'Commit Check'
-
 - script: |
-    echo Correr las pruebas de integración
-     echo Inicio update MENSAJEEEEEEEEEEEEEEEEEEEE
+  echo Compilar y ejecutar test unitarios
+
+  # PREGUNTAR#################
+  # sbt test  
+
+  displayName: 'Fase de verificacion de contribucion - Commit Check Phase'
+
+steps:
+- script: |
+  echo Compilar y ejecutar test de integracion con una base de datos postgres 
+
+  # PREGUNTAR#################
+  # sudo systemctl start docker
+  # sudo docker run -it -e POSTGRES_PASSWORD=gcs -e POSTGRES_USER=gcs -e POSTGRES_DB=gcs -p 127.0.0.1:5432:5432  postgres:9.5
+  # sbt "project gcsAppIT" test
+
+  displayName: 'Fase de verificacion de pruebas de integracion - Integration Test Prase'
+
+steps:
+- script: |
+    echo 1.-  Empaquetar software
+
+    echo Iniciando el proceso compilacion de la aplicacion
     sudo apt-get update
-    echo Inicio java  MENSAJEEEEEEEEEEEEEEEEEEEE
     sudo apt-get install openjdk-8-jdk
-    java -version
-    echo Instalacion y Descarga de scala  MENSAJEEEEEEEEEEEEEEEEEEEE 
     wget www.scala-lang.org/files/archive/scala-2.12.10.deb
     sudo dpkg -i scala*.deb
-    scala -version
-    echo Instalacion y Descarga SBT MENSAJEEEEEEEEEEEEEEEEEEEE
     echo "deb https://dl.bintray.com/sbt/debian /" | sudo tee -a /etc/apt/sources.list.d/sbt.list
     sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2EE0EA64E40A89B84B2DF73499E82A75642AC823
     sudo apt-get update
     sudo apt-get install sbt -y
-    echo Instalar GIT MENSAJEEEEEEEEEEEEEEEEEEEE
     sudo apt install git
-    git -version
-    echo Instalar Which MENSAJEEEEEEEEEEEEEEEEEEEE
     sudo apt install which
-    echo Instalar YUM-UTILS MENSAJEEEEEEEEEEEEEEEEEEEE
     sudo apt-get install -y yum-utils
-    echo Instalar Docker MENSAJEEEEEEEEEEEEEEEEEEEE
     sudo apt-get install docker-ce docker-ce-cli containerd.io
     sudo docker run hello-world
-    echo Instalar ALIEN MENSAJEEEEEEEEEEEEEEEEEEEE
     sudo add-apt-repository universe
     sudo apt install alien
-    echo Listar repositorio MENSAJEEEEEEEEEEEEEEEEEEEE
-    ls
-    echo Crear el build MENSAJEEEEEEEEEEEEEEEEEEEE
     sudo sbt rpm:packageBin
-    echo Copiar a Azure MENSAJEEEEEEEEEEEEEEEEEEEE
+
+    echo 2. - Copiar el paqueta al servidor de pruebas
     sudo scp -v -o StrictHostKeyChecking=no -i ssh-key.pem /home/vsts/work/1/s/gcs-app/target/rpm/RPMS/noarch/gcs-app-2.8.x-1.noarch.rpm azureuser@40.117.238.123:/home/azureuser
-    echo Conectarse a Azure MENSAJEEEEEEEEEEEEEEEEEEEE
+
+    echo 3. - Desplegar e instalar el paquete en el servidor de pruebas
     sudo ssh -tt -i ssh-key.pem azureuser@40.117.238.123 <<'EOT'
-    echo Desintalar la APP MENSAJEEEEEEEEEEEEEEEEEEEE
-    sudo rpm -e gcs-app
-    echo Instalar la APP MENSAJEEEEEEEEEEEEEEEEEEEE
-    sudo rpm –i gcs-app-2.8.x-1.noarch.rpm
-    echo Reiniciar la APP MENSAJEEEEEEEEEEEEEEEEEEEE 2222
-    sudo systemctl restart gcs-app
-    logout
+        sudo systemctl stop gcs-app
+        sudo rpm -e gcs-app
+        sudo rpm –i gcs-app-2.8.x-1.noarch.rpm
+        logout
     EOT
-    echo FIN MENSAJEEEEEEEEEEEEEEEEEEEE222
-  displayName: 'Integration Tests'
+
+    echo 4. Copiar la documentacion a una direccion dentro del servidor web
+    PREGUNTAR#################
+
+  displayName: 'Fase de despliegue a servidores de pruebas - Deploy Phase'
