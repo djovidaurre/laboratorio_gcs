@@ -11,25 +11,14 @@ pool:
 steps:
 - script: |
  echo Compilar y ejecutar test unitarios
- /* PREGUNTAR#################
- #sbt test  */
  displayName: 'Fase de verificacion de contribucion - Commit Check Phase'
-
 steps:
 - script: |
   echo Compilar y ejecutar test de integracion con una base de datos postgres 
-
-  # PREGUNTAR#################
-  # sudo systemctl start docker
-  # sudo docker run -it -e POSTGRES_PASSWORD=gcs -e POSTGRES_USER=gcs -e POSTGRES_DB=gcs -p 127.0.0.1:5432:5432  postgres:9.5
-  # sbt "project gcsAppIT" test
-
   displayName: 'Fase de verificacion de pruebas de integracion - Integration Test Prase'
-
 steps:
 - script: |
     echo 1.-  Empaquetar software
-
     echo Iniciando el proceso compilacion de la aplicacion
     sudo apt-get update
     sudo apt-get install openjdk-8-jdk
@@ -47,10 +36,8 @@ steps:
     sudo add-apt-repository universe
     sudo apt install alien
     sudo sbt rpm:packageBin
-
     echo 2. - Copiar el paqueta al servidor de pruebas
     sudo scp -v -o StrictHostKeyChecking=no -i ssh-key.pem /home/vsts/work/1/s/gcs-app/target/rpm/RPMS/noarch/gcs-app-2.8.x-1.noarch.rpm azureuser@40.117.238.123:/home/azureuser
-
     echo 3. - Desplegar e instalar el paquete en el servidor de pruebas
     sudo ssh -tt -i ssh-key.pem azureuser@40.117.238.123 <<'EOT'
         sudo systemctl stop gcs-app
@@ -58,8 +45,5 @@ steps:
         sudo rpm –i gcs-app-2.8.x-1.noarch.rpm
         logout
     EOT
-
     echo 4. Copiar la documentacion a una direccion dentro del servidor web
-    PREGUNTAR#################
-
   displayName: 'Fase de despliegue a servidores de pruebas - Deploy Phase'
