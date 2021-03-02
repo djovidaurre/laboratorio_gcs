@@ -2,13 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\config",
-    "\\gcs-app",
-    "\\gcs-app\\aplicación",
     "\\gcs-app\\aplicación\\puntos de vista",
-    "\\gcs-app\\app",
     "\\gcs-app\\app\\controllers",
     "\\gcs-app\\app\\views",
-    "\\gcs-it",
     "\\gcs-it\\test"
   ],
   "SelectedNode": "\\azure-pipelines.yml",
