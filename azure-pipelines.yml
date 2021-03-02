@@ -60,12 +60,15 @@ steps:
     sudo systemctl restart gcs-app  
     echo Cambiar de usuario MENSAJEEEEEEEEEEEEEEEEEEEE
     sudo chown -R gcs-app /usr/share/gcs-app/
-    echo Cambiar de puerto MENSAJEEEEEEEEEEEEEEEEEEEE
-    curl localhost:9000
+    sudo chgrp -R gcs-app /usr/share/gcs-app/
     sudo systemctl restart gcs-app
     logout
     EOT
     echo Copiar a Azure archivo ngnix MENSAJEEEEEEEEEEEEEEEEEEEE
+    sudo chown -R gcs-app /etc/nginx
+    sudo chgrp -R gcs-app /etc/nginx
+    sudo chown -R azureuser /etc/nginx
+    sudo chgrp -R azureuser /etc/nginx
     sudo scp -v -o StrictHostKeyChecking=no -i ssh-key.pem nginx.conf azureuser@23.96.48.228:/etc/nginx
     echo Volver a conectarse a Azure MENSAJEEEEEEEEEEEEEEEEEEEE
     sudo ssh -tt -i ssh-key.pem azureuser@23.96.48.228 <<'EOT'
