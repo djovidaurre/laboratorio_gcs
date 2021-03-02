@@ -9,8 +9,9 @@ trigger:
 pool:
   vmImage: 'Ubuntu-16.04'
 
-steps:
-- script: echo Compilar y correr las pruebas unitarias
+steps: 
+- script: |
+  echo Compilar y correr las pruebas unitarias
   displayName: 'Commit Check'
 
 steps:
