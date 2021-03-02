@@ -11,9 +11,9 @@ pool:
 
 steps:
 - script: echo Compilar y correr las pruebas unitarias
-  displayName: 'Commit Check'
+displayName: 'Commit Check'
 
-  - script: |
-    echo Correr las pruebas de integración
-     echo Inicio update MENSAJEEEEEEEEEEEEEEEEEEEE
-  displayName: 'Integration Tests'
+- script: |
+  echo Correr las pruebas de integración
+  echo Inicio update MENSAJEEEEEEEEEEEEEEEEEEEE
+displayName: 'Integration Tests'
