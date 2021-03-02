@@ -18,6 +18,7 @@ steps:
   echo Compilar y correr las pruebas unitarias
   displayName: 'Commit Check 2'
 
+steps:
 - script: |
     echo Correr las pruebas de integración
     echo Inicio update MENSAJEEEEEEEEEEEEEEEEEEEE
