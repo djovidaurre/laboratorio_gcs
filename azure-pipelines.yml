@@ -56,7 +56,7 @@ steps:
     echo Listar  MENSAJEEEEEEEEEEEEEEEEEEEE
     ls
     echo Cambiar directorio MENSAJEEEEEEEEEEEEEEEEEEEE
-    cd gcs-IT
+    cd gcs-it
     echo Listar MENSAJEEEEEEEEEEEEEEEEEEEE
     ls
     echo Ejecuta Test MENSAJEEEEEEEEEEEEEEEEEEEE
