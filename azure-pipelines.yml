@@ -59,7 +59,7 @@ steps:
     sshEndpoint: 'ssh-key'
     runOptions: 'inline' 
     inline: |
-     echo Detener el APP y Nginx MENSAJEEEEEEEEEEEEEEEEEEEE
+     echo Detener el APP y Nginx MENSAJEEEEEEEEEEEEEEEEEEEEs
      sudo systemctl stop nginx
      sudo systemctl stop gcs-app.service
      echo Desintalar la APP MENSAJEEEEEEEEEEEEEEEEEEEE
