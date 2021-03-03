@@ -117,7 +117,7 @@ steps:
    contents: 'nginx.conf'
    targetFolder: '/etc/nginx'
    readyTimeout: '20000'
-displayName: 'Copy nginx to WebServer'
+  displayName: 'Copy nginx to WebServer'
 
 - task: SSH@0
   inputs:
@@ -130,6 +130,6 @@ displayName: 'Copy nginx to WebServer'
      echo Habilitar el demonio MENSAJEEEEEEEEEEEEEEEEEEEE
      sudo setsebool -P httpd_can_network_connect on
     readyTimeout: '20000'
-displayName: 'Reiniciar servicios'
+  displayName: 'Reiniciar servicios'
 
 
