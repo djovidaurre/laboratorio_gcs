@@ -55,19 +55,15 @@ steps:
     sudo systemctl stop gcs-app.service
     echo Desintalar la APP MENSAJEEEEEEEEEEEEEEEEEEEE
     sudo rpm -e gcs-app
+    echo Eliminar directorio MENSAJEEEEEEEEEEEEEEEEEEEE
+    sudo rm -rf /usr/share/gcs-app/
     echo Instalar la APP MENSAJEEEEEEEEEEEEEEEEEEEE
     sudo rpm -i gcs-app-2.8.x-1.noarch.rpm
-    echo Restablecer la APP MENSAJEEEEEEEEEEEEEEEEEEEE
     echo Cambiar de usuario MENSAJEEEEEEEEEEEEEEEEEEEE
     sudo chown -R gcs-app /usr/share/gcs-app/
     sudo chgrp -R gcs-app /usr/share/gcs-app/
     logout
     EOT
-    echo Copiar a Azure archivo ngnix MENSAJEEEEEEEEEEEEEEEEEEEE
-    sudo chown -R gcs-app /etc/nginx
-    sudo chgrp -R gcs-app /etc/nginx
-    sudo chown -R azureuser /etc/nginx
-    sudo chgrp -R azureuser /etc/nginx
     sudo scp -v -o StrictHostKeyChecking=no -i ssh-key.pem nginx.conf azureuser@23.96.48.228:/etc/nginx
     echo Volver a conectarse a Azure MENSAJEEEEEEEEEEEEEEEEEEEE
     sudo ssh -tt -i ssh-key.pem azureuser@23.96.48.228 <<'EOT'
