@@ -11,7 +11,7 @@ pool:
 
 steps:
 - script: |
-    echo Compilar y Ejecutar Test Unitario  MENSAJEEEEEEEEEEEEEEEEEEEE
+    echo FASE DE VERIFICACION DE CONSTRUCCION
     echo 1. Compilar aplicacion MENSAJEEEEEEEEEEEEEEEEEEEE
     echo Inicio update MENSAJEEEEEEEEEEEEEEEEEEEE
     sudo apt-get update
@@ -46,7 +46,22 @@ steps:
     echo 2. Ejecutar test Unitario MENSAJEEEEEEEEEEEEEEEEEEEEE
     sudo sbt test 
     echo Fin 2 Ejecutar test Unitario  MENSAJEEEEEEEEEEEEEEEEEEEE
-  displayName: 'Commit Check'
+  displayName: 'Commit Check Phase'
+
+steps:
+- script: |
+    echo FASE DE VERIFICACION DE PRUEBAS DE INTEGRACION
+    echo 1. Ejecutar test de integracion MENSAJEEEEEEEEEEEEEEEEEEEE
+    sudo systemctl start docker
+    sudo docker run -it -e POSTGRES_PASSWORD=gcs -e POSTGRES_USER=gcs -e POSTGRES_DB=gcs -p 127.0.0.1:5432:5432  postgres:9.5
+    echo Listar  MENSAJEEEEEEEEEEEEEEEEEEEE
+    ls
+    echo Cambiar directorio MENSAJEEEEEEEEEEEEEEEEEEEE
+    cd /gcs-IT
+    echo Ejecuta Test MENSAJEEEEEEEEEEEEEEEEEEEE
+    sbt "project gcsAppIT" test
+    echo FIN 1 Ejecutar test de integracion MENSAJEEEEEEEEEEEEEEEEEEEE
+  displayName: 'Integration Test Phase'
   
 - task: CopyFilesOverSSH@0
   inputs:
