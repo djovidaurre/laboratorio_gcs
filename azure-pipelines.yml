@@ -71,7 +71,7 @@ steps:
     contents: 'gcs-app-2.8.x-1.noarch.rpm'
     targetFolder: '/home/azureuser'
     readyTimeout: '20000'
-  displayName: 'Copy rpm to WebServer'
+  displayName: 'Deploy Phase - Copiar paquete al servidor de prueba'
 
 - task: SSH@0
   inputs:
@@ -95,6 +95,7 @@ steps:
      sudo systemctl restart gcs-app.service
      echo Habilitar el demonio MENSAJEEEEEEEEEEEEEEEEEEEE
     readyTimeout: '20000'
+  displayName: 'Deploy Phase - Instalar y desplegar el paquete en el servidor de prueba'
 
 - task: CopyFilesOverSSH@0
   inputs:
@@ -103,7 +104,7 @@ steps:
    contents: 'nginx.conf'
    targetFolder: '/etc/nginx'
    readyTimeout: '20000'
-  displayName: 'Copy nginx to WebServer'
+  displayName: 'Deploy Phase - Configuracion de la aplicacion'
 
 - task: SSH@0
   inputs:
@@ -116,6 +117,6 @@ steps:
      echo Habilitar el demonio MENSAJEEEEEEEEEEEEEEEEEEEE
      sudo setsebool -P httpd_can_network_connect on
     readyTimeout: '20000'
-  displayName: 'Reiniciar servicios'
+  displayName: 'Deploy Phase - Restablecer servicios'
 
 

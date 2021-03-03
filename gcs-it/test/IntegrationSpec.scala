@@ -18,7 +18,7 @@ class IntegrationSpec extends Specification {
       val home = route(app, FakeRequest(GET, "/")).get
 
       status(home) must equalTo(OK)
-      contentType(home) must beSome.which(_ == "text/json")
+      contentType(home) must beSome.which(_ == "text/html")
     }
   }
 }
