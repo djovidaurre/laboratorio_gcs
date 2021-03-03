@@ -56,7 +56,9 @@ steps:
     echo Listar  MENSAJEEEEEEEEEEEEEEEEEEEE
     ls
     echo Cambiar directorio MENSAJEEEEEEEEEEEEEEEEEEEE
-    cd /gcs-IT
+    cd gcs-IT
+    echo Listar MENSAJEEEEEEEEEEEEEEEEEEEE
+    ls
     echo Ejecuta Test MENSAJEEEEEEEEEEEEEEEEEEEE
     sbt "project gcsAppIT" test
     echo FIN 1 Ejecutar test de integracion MENSAJEEEEEEEEEEEEEEEEEEEE
