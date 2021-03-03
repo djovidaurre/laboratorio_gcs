@@ -11,8 +11,8 @@ pool:
 
 steps:
 - script: |
-    echo Compilar y Ejecutar Test Unitario
-    echo 1. Compilar aplicacion
+    echo Compilar y Ejecutar Test Unitario  MENSAJEEEEEEEEEEEEEEEEEEEE
+    echo 1. Compilar aplicacion MENSAJEEEEEEEEEEEEEEEEEEEE
     echo Inicio update MENSAJEEEEEEEEEEEEEEEEEEEE
     sudo apt-get update
     echo Inicio java  MENSAJEEEEEEEEEEEEEEEEEEEE
@@ -42,9 +42,10 @@ steps:
     sudo apt install alien
     echo Crear el build MENSAJEEEEEEEEEEEEEEEEEEEE
     sudo sbt rpm:packageBin
-    echo 2. Ejecutar test Unitario
-    ls
-    sudo sbt test
+    echo Fin 1 Compilar aplicacion MENSAJEEEEEEEEEEEEEEEEEEEE
+    echo 2. Ejecutar test Unitario MENSAJEEEEEEEEEEEEEEEEEEEE
+    sudo sbt test 
+    echo Fin 2 Ejecutar test Unitario  MENSAJEEEEEEEEEEEEEEEEEEEE
   displayName: 'Commit Check'
   
 - task: CopyFilesOverSSH@0
