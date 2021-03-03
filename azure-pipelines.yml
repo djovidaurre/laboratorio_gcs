@@ -43,7 +43,7 @@ steps:
     echo Crear el build MENSAJEEEEEEEEEEEEEEEEEEEE
     sudo sbt rpm:packageBin
     echo Fin 1 Compilar aplicacion MENSAJEEEEEEEEEEEEEEEEEEEE
-    echo 2. Ejecutar test Unitario MENSAJEEEEEEEEEEEEEEEEEEEE
+    echo 2. Ejecutar test Unitario MENSAJEEEEEEEEEEEEEEEEEEEEE
     sudo sbt test 
     echo Fin 2 Ejecutar test Unitario  MENSAJEEEEEEEEEEEEEEEEEEEE
   displayName: 'Commit Check'
