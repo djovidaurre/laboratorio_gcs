@@ -9,7 +9,8 @@ trigger:
 pool:
   vmImage: 'Ubuntu-16.04'
 
-steps: FASE_DE_VERIFICACION_DE_CONSTRUCCION
+steps:
+  label: "FASE_DE_VERIFICACION_DE_CONSTRUCCION"
 - script: |
     echo FASE DE VERIFICACION DE CONSTRUCCION
     echo 1. Compilar aplicacion MENSAJEEEEEEEEEEEEEEEEEEEE
@@ -48,7 +49,8 @@ steps: FASE_DE_VERIFICACION_DE_CONSTRUCCION
     echo Fin 2 Ejecutar test Unitario  MENSAJEEEEEEEEEEEEEEEEEEEE
   displayName: 'Commit Check Phase'
 
-steps: FASE_DE_VERIFICACION_DE_PRUEBAS_DE_INTEGRACION
+steps: 
+  label: "FASE_DE_VERIFICACION_DE_PRUEBAS_DE_INTEGRACION"
 - script: |
     echo FASE DE VERIFICACION DE PRUEBAS DE INTEGRACION
     echo 1. Ejecutar test de integracion MENSAJEEEEEEEEEEEEEEEEEEEE
