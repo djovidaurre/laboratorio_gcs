@@ -50,18 +50,17 @@ steps:
     sudo scp -v -o StrictHostKeyChecking=no -i ssh-key.pem /home/vsts/work/1/s/gcs-app/target/rpm/RPMS/noarch/gcs-app-2.8.x-1.noarch.rpm azureuser@23.96.48.228:/home/azureuser
     echo Conectarse a Azure MENSAJEEEEEEEEEEEEEEEEEEEE
     sudo ssh -tt -i ssh-key.pem azureuser@23.96.48.228 <<'EOT'
-    echo Detener el APP MENSAJEEEEEEEEEEEEEEEEEEEE
-    sudo systemctl stop gcs-app
+    echo Detener el APP y Nginx MENSAJEEEEEEEEEEEEEEEEEEEE
+    sudo systemctl stop nginx
+    sudo systemctl stop gcs-app.service
     echo Desintalar la APP MENSAJEEEEEEEEEEEEEEEEEEEE
     sudo rpm -e gcs-app
     echo Instalar la APP MENSAJEEEEEEEEEEEEEEEEEEEE
     sudo rpm -i gcs-app-2.8.x-1.noarch.rpm
     echo Restablecer la APP MENSAJEEEEEEEEEEEEEEEEEEEE
-    sudo systemctl restart gcs-app  
     echo Cambiar de usuario MENSAJEEEEEEEEEEEEEEEEEEEE
     sudo chown -R gcs-app /usr/share/gcs-app/
     sudo chgrp -R gcs-app /usr/share/gcs-app/
-    sudo systemctl restart gcs-app
     logout
     EOT
     echo Copiar a Azure archivo ngnix MENSAJEEEEEEEEEEEEEEEEEEEE
@@ -72,10 +71,9 @@ steps:
     sudo scp -v -o StrictHostKeyChecking=no -i ssh-key.pem nginx.conf azureuser@23.96.48.228:/etc/nginx
     echo Volver a conectarse a Azure MENSAJEEEEEEEEEEEEEEEEEEEE
     sudo ssh -tt -i ssh-key.pem azureuser@23.96.48.228 <<'EOT'
-    echo Reiniciar el nginx MENSAJEEEEEEEEEEEEEEEEEEEE
+    echo Reiniciar el APP y nginx MENSAJEEEEEEEEEEEEEEEEEEEE
     sudo systemctl restart nginx
-    echo Reiniciar el app MENSAJEEEEEEEEEEEEEEEEEEEE
-    sudo systemctl restart gcs-app
+    sudo systemctl restart gcs-app.service
     echo Habilitar el demonio MENSAJEEEEEEEEEEEEEEEEEEEE
     sudo setsebool -P httpd_can_network_connect on
     logout
