@@ -60,7 +60,7 @@ steps:
     echo Listar MENSAJEEEEEEEEEEEEEEEEEEEE
     ls
     echo Ejecuta Test MENSAJEEEEEEEEEEEEEEEEEEEE
-    sbt "project gcsAppIT" test
+    sbt test
     echo FIN 1 Ejecutar test de integracion MENSAJEEEEEEEEEEEEEEEEEEEE
   displayName: 'Integration Test Phase'
   
