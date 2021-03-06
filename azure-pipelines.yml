@@ -111,7 +111,7 @@ steps:
     sshEndpoint: 'ssh-key'
     runOptions: 'inline' 
     inline: |
-     echo Reiniciar el APP y nginx MENSAJEEEEEEEEEEEEEEEEEEEE
+     echo Reiniciar el APP y nginx MENSAJEEEEEEEEEEEEEEEEEEEEEE
      sudo systemctl restart nginx
      sudo systemctl restart gcs-app.service
      echo Habilitar el demonio MENSAJEEEEEEEEEEEEEEEEEEEEEEEEEEE
