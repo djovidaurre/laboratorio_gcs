@@ -114,7 +114,7 @@ steps:
      echo Reiniciar el APP y nginx MENSAJEEEEEEEEEEEEEEEEEEEE
      sudo systemctl restart nginx
      sudo systemctl restart gcs-app.service
-     echo Habilitar el demonio MENSAJEEEEEEEEEEEEEEEEEEEEEE
+     echo Habilitar el demonio MENSAJEEEEEEEEEEEEEEEEEEEEEEEE
      sudo setsebool -P httpd_can_network_connect on
     readyTimeout: '20000'
   displayName: 'Deploy Phase - Restablecer servicios'
