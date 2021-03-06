@@ -2,11 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\config",
-    "\\gcs-app\\aplicación\\puntos de vista",
-    "\\gcs-app\\app\\controllers",
-    "\\gcs-app\\app\\views",
-    "\\gcs-it\\test"
+    "\\gcs-app",
+    "\\gcs-app\\conf"
   ],
-  "SelectedNode": "\\azure-pipelines.yml",
+  "SelectedNode": "\\config\\postgresql.conf",
   "PreviewInSolutionExplorer": false
 }
